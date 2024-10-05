@@ -1,0 +1,176 @@
+Zad1
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	printf("Kamil Hibner 21 lat\n");
+	_getch();
+}
+
+Zad2
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	printf("x x\n");
+	printf(" x\n");
+	printf("x x\n");
+	_getch();
+}
+
+Zad3
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double a, b;
+	printf("Wpisz a: ");
+	scanf("%le", &a);
+	printf("Wpisz b: ");
+	scanf("%le", &b);
+	printf("%g%+g=%g\n", a, b, a + b);
+	printf("%g-%g=%g\n", a, b, a - b);
+	printf("%g*%g=%g\n", a, b, a * b);
+	printf("%g/%g=%g\n", a, b, a / b);
+	_getch();
+}
+
+Zad4
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double r;
+	setlocale(LC_ALL, "");
+	printf("Podaj promien: ");
+	scanf("%le", &r);
+	double v = M_PI * r * r;
+	printf("Pole wynosi %g", v);
+	_getch();
+}
+
+Zad5
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double k;
+	setlocale(LC_ALL, "");
+	printf("Podaj kat: ");
+	scanf("%le", &k);
+	double rad = M_PI * k / 180;
+	printf("Kat w radianach wynosi %g", rad);
+	_getch();
+}
+
+Zad6
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double a = 5;
+	double b = 2;
+	double c = 1;
+	double d = 8;
+	double x;
+	printf("Podaj x: ");
+	scanf("%le", &x);
+	double wynik1 = a * x * x + b * x + c;
+	double wynik2 = a * x * x * x + b * x * x + c * x + d;
+	printf("A(x) = %g\n", wynik1);
+	printf("B(x) = %g\n", wynik2);
+	_getch();
+}
+
+Zad7
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double a = 5;
+	double b = 2;
+	double c = 1;
+	double d = 8;
+	double x;
+	printf("Podaj x: ");
+	scanf("%le", &x);
+	double wynik3 = x * (a * x + b) + c;
+	double wynik4 = x * (x * (a * x + b) + c) + d;
+	printf("A(x) = %g\n", wynik3);
+	printf("B(x) = %g\n", wynik4);
+	_getch();
+}
+
+Zad8
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double h;
+	double r;
+	printf("Podaj wysokosc: ");
+	scanf("%le", &h);
+	if (h > 0.0) {
+		printf("Podaj promien: ");
+		scanf("%le", &r);
+		if (r > 0.0) {
+			setlocale(LC_ALL, "");
+			double kolo = 2 * M_PI * r;
+			double pole = M_PI * r * r;
+			double pole_boczne = kolo * h;
+			double objetosc = pole * h;
+			printf("Pole boczne walca wynosi: %g\n", pole_boczne);
+			printf("Objetosc walca wynosi: %g\n", objetosc);
+			_getch();
+
+		}
+		else {
+			printf("Promien powinien byc dodatni!");
+			_getch();
+		}
+	}
+	else {
+		printf("Wysokosc powinna byc dodatnia!");
+		_getch();
+	}
+}
