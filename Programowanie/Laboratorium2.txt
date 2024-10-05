@@ -1,0 +1,118 @@
+Zad1
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	char c;
+	setlocale(LC_ALL, "");
+	c = getchar();
+	if (c >= 41 && c <= 90) {
+		printf("Znak jest wielka litera alfabetu angielskiego");
+	}
+	else
+	{
+		printf("Znak nie jest wielka litera alfabetu angielskiego");
+	}
+	_getch();
+}
+
+Zad2
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double a, b;
+	printf("Wpisz a: ");
+	scanf("%le", &a);
+	printf("Wpisz b: ");
+	scanf("%le", &b);
+	printf("%g%+g=%g\n", a, b, a + b);
+	if (b != 0) {
+		printf("%g/%g=%g\n", a, b, a / b);
+	}
+	else
+	{
+		printf("Nie dzielimy przez 0\n");
+	}
+	_getch();
+}
+
+Zad3
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double a, b;
+	printf("Wpisz a: ");
+	scanf("%le", &a);
+	if (a != 0) {
+		printf("Wpisz b: ");
+		scanf("%le", &b);
+		double x = -b / a;
+		printf("Wspolrzedne punktu przeciecia to x=%g y=0",x);
+		_getch();
+	}
+	else
+	{
+		printf("Wprowadz poprawne a!");
+		_getch();
+	}
+}
+
+Zad4
+
+Zad5
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double h;
+	double r;
+	printf("Podaj wysokosc: ");
+	scanf("%le", &h);
+	if (h > 0.0) {
+		printf("Podaj promien: ");
+		scanf("%le", &r);
+		if (r > 0.0) {
+			setlocale(LC_ALL, "");
+			double kolo = 2 * M_PI * r;
+			double pole = M_PI * r * r;
+			double pole_boczne = kolo * h;
+			double objetosc = pole * h;
+			printf("Pole boczne walca wynosi: %g\n", pole_boczne);
+			printf("Objetosc walca wynosi: %g\n", objetosc);
+			_getch();
+
+		}
+		else {
+			printf("Promien powinien byc dodatni!");
+			_getch();
+		}
+	}
+	else {
+		printf("Wysokosc powinna byc dodatnia!");
+		_getch();
+	}
+}
+
+Zad6
