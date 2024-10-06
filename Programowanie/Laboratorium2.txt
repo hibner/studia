@@ -76,6 +76,26 @@ int main() {
 
 Zad4
 
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	char x;
+	int n;
+	printf("Wpisz znak: ");
+	scanf("%c", &x);
+	printf("Wpisz przesuniecie: ");
+	scanf("%d", &n);
+	char c1 = x >> n;
+	printf("Nowy znak po przesunieciu znaku %c o %d w prawo to %c", x, n, c1);
+	_getch();
+}
+
+
 Zad5
 
 #include<stdio.h>
@@ -116,3 +136,79 @@ int main() {
 }
 
 Zad6
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double a, b, c;
+	printf("Wpisz a, b, c: \n");
+	scanf("%le" "%le" "%le", &a, &b, &c);
+	if (a != 0) {
+		double delta = b * b - 4 * a * c;
+		if (delta < 0) {
+			printf("Brak rozwiazan");
+			_getch();
+		}
+		else if (delta == 0) {
+			double x = -b / (2 * a);
+			printf("Rownanie ma jedno rozwiazanie x=%g",x);
+			_getch();
+		}
+		else {
+			double x1 = ( - b + sqrt(delta)) / (2 * a);
+			double x2 = ( - b - sqrt(delta)) / (2 * a);
+			printf("Rownanie ma dwa rozwiazania x1=%g i x2=%g", x1, x2);
+			_getch();
+		}
+	}
+	else
+	{
+		printf("Wprowadz poprawne a!");
+		_getch();
+	}
+}
+
+
+Zad7
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	double a, b, c, d, e, f;
+	printf("Wpisz a, b, c\n");
+	scanf("%le" "%le" "%le", &a, &b, &c);
+	printf("Wpisz d, e, f\n");
+	scanf("%le" "%le" "%le", &d, &e, &f);
+	double w, wx, wy, y, x;
+	w = a * e - b * d;
+	wx = c * e - b * f;
+	wy = a * f - c * d;
+	y = wy / w;
+	x = wx / w;
+	if (w == 0) {
+		if (wx == 0) {
+			printf("Nieskonczenie wiele rozwiazan");
+			_getch();
+		}
+		else
+		{
+			printf("Uklad sprzeczny");
+			_getch();
+		}
+	}
+	else
+	{
+		printf("Uklad jest spelniony dla pary liczb x=%g i  y=%g", x, y);
+		_getch();
+	}
+}
