@@ -1,0 +1,54 @@
+Zad1
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+
+double suma(double a, double b) {
+	return a + b;
+}
+int main() {
+	double a, b;
+	printf("Podaj a: \n");
+	scanf("%le", &a);
+	printf("Podaj b: \n");
+	scanf("%le", &b);
+	printf("a + b = %g\n", suma(a,b));
+	printf("a + b = %g\n", suma(a,b));
+}
+
+Zad2
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+
+double sr(int n, double a[]) {
+	double s = 0;
+	int i;
+	for (i = 0; i < n; i++) {
+		s += a[i];
+	}
+	return s / n;
+}
+int main() {
+	int i, n;
+	printf("Podaj n: ");
+	scanf("%d", &n);
+	double* a = new double[n];
+	for (i = 0; i < n; i++) {
+		printf("Podaj a[%d]: ", i);
+		scanf("%le", &a[i]);
+	}
+	setlocale(LC_ALL, "");
+	printf("srednia = %g\n", sr(n, a));
+	_getch();
+}
