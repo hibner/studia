@@ -1,1 +1,92 @@
+Zad1
 
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	char c;
+	setlocale(LC_ALL, "");
+	printf("Wprowadz tekst zakonczony CTRL + Z w nowej linii\n");
+	setlocale(LC_ALL, ".852");
+	while ((c = getchar()) != EOF)
+		putchar(c);
+	_getch();
+
+}
+
+Zad2
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	char c;
+	int t = 0;
+	setlocale(LC_ALL, "");
+	printf("Wprowadz tekst zakonczony CTRL + Z w nowej linii\n");
+	setlocale(LC_ALL, ".852");
+	while ((c = getchar()) != EOF)
+		if (c == 'a')t++;
+	printf("Liczba wystapien litery 'a' = %d\n",t);
+	_getch();
+}
+
+Zad4
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	char c;
+	int t1 = 0, t2 = 0, t = 0;
+	setlocale(LC_ALL, "");
+	printf("Wprowadz tekst zakonczony CTRL + Z w nowej linii\n");
+	setlocale(LC_ALL, ".852");
+	while ((c = getchar()) != EOF)
+	{
+		t2 = (c == 'b');
+		if (t1 && t2) t++;
+		t1 = (c == 'a');
+	}
+	setlocale(LC_ALL, "");
+	printf("Liczba wystapien litery \"ab\" = %d\n", t);
+	_getch();
+}
+
+Zad5
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	char c;
+	int t1 = 1, t2=0, t=0;
+	setlocale(LC_ALL, "");
+	printf("Wprowadz tekst zakonczony CTRL + Z w nowej linii\n");
+	setlocale(LC_ALL, ".852");
+	while ((c = getchar()) != EOF)
+	{
+		t2 = (c == ' ' || c == '\n' || c == '\t');
+		if (t1 && !t2) t++;
+		t1 = t2;
+	}
+	setlocale(LC_ALL, "");
+	printf("Liczba wystapien slow = %d\n", t);
+	_getch();
+}
