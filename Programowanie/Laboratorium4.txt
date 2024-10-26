@@ -1,0 +1,126 @@
+Zad1
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	int n;
+	printf("Wprowadz liczbe: \n");
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		printf("%d ", i);
+	}
+	_getch();
+}
+
+Zad2
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	for (int i = 1; i < 11; i++) {
+		for (int j = 1; j < 11; j++)
+		{
+			printf("%-4d ", i*j);
+		}
+		printf("\n");
+	}
+	_getch();
+}
+
+Zad3
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	int i, n, min, max;
+	printf("Podaj n: ");
+	scanf("%d", &n);
+	int* a = new int[n];
+	for (i = 0; i < n; i++) {
+		printf("Podaj a[%d]: ", i);
+		scanf("%d", &a[i]);
+	}
+	min = max = a[0];
+	for (i = 1; i < n; i++) {
+		if (a[i] > max)max = a[i];
+		if (a[i] < min)min = a[i];
+	}
+	printf("min = %d, max=%d\n", min, max);
+	_getch();
+}
+
+Zad4
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	int i, n;
+	double srednia, suma;
+	printf("Podaj n: ");
+	scanf("%d", &n);
+	int* a = new int[n];
+	for (i = 0; i < n; i++) {
+		printf("Podaj a[%d]: ", i);
+		scanf("%d", &a[i]);
+	}
+	for (i = 0; i < n; i++) {
+		suma += a[i];
+	}
+	srednia = suma / n;
+	printf("srednia = %g\n", srednia);
+	_getch();
+}
+
+Zad6
+
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+int main() {
+	int i, j, temp, n;
+	printf("Podaj n: ");
+	scanf("%d", &n);
+	int* a = new int[n];
+	for (i = 0; i < n; i++) {
+		printf("Podaj a[%d]: ", i);
+		scanf("%d", &a[i]);
+	}
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = 1; j < n - i; j++) {
+			if (a[j-1] > a[j]) {
+				temp = a[j];
+				a[j] = a[j-1];
+				a[j-1] = temp;
+			}
+		}
+	}
+	for (i = 0; i < n; i++) {
+		printf("a[%d] = %d\n", i, a[i]);
+	}
+	_getch();
+}
+
