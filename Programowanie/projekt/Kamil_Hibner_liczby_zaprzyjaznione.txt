@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<conio.h>
+#include<locale.h>
+#pragma warning(disable:4996)
+#define _CRT_SECURE_NO_WARNINGS
+#define _USE_MATH_DEFINES
+#include<math.h>
+
+int sumaDzielnikow(int liczba) {
+	int suma = 0;
+	for (int i = 1; i <= liczba/2; i++) {
+		if (liczba % i == 0) {
+			suma += i;
+		}
+	}
+	return suma;
+}
+
+int main() {
+	setlocale(LC_ALL, "");
+	int liczbaPierwsza, liczbaDruga;
+
+	printf("Podaj pierwszą liczbę: ");
+	if (scanf("%d", &liczbaPierwsza) != 1 || liczbaPierwsza <= 0) {
+		printf("To nie jest liczba naturalna. Program zostanie zakończony.\n");
+		_getch();
+		return 1;
+	}
+	printf("Podaj drugą liczbę: ");
+	if (scanf("%d", &liczbaDruga) != 1 || liczbaDruga <= 0) {
+		printf("To nie jest liczba naturalna. Program zostanie zakończony.\n");
+		_getch();
+		return 1;
+	}
+
+	int sumaDzielnikowPierwsza = sumaDzielnikow(liczbaPierwsza);
+	int sumaDzielnikowDruga= sumaDzielnikow(liczbaDruga);
+
+	if (sumaDzielnikowPierwsza == liczbaDruga && sumaDzielnikowDruga == liczbaPierwsza) {
+		printf("Liczby %d i %d tworzą parę liczb zaprzyjaźnionych.", liczbaPierwsza, liczbaDruga);
+	}
+	else {
+		printf("Liczby %d i %d nie tworzą pary liczb zaprzyjaźnionych.", liczbaPierwsza, liczbaDruga);
+	}
+
+	_getch();
+}
